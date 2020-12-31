@@ -1,7 +1,7 @@
 # Deep Learning-based Diagnosis of Maxillary Sinusitis using Paranasal Sinus X-ray 
 
 ## Introduction
-This project aims to build a deep learning-based diagnostic model of maxillary sinusitis. A total of 10,845 paranasal sinus X-rays (DICOM format) were used, which will be available at this site with restricted access. This repository includes 10-fold cross-validation, data preprocessing, and evaluation using a trained model. This study was supported by grants from the National Information Society Agency (NIA) of Korea.
+This project aims to build a deep learning-based diagnostic model of maxillary sinusitis. The convolutional neural network (EfficientNet-B3) were trained and evaluated using a total of 10,845 sinus patches of paranasal sinus X-rays (DICOM format) acquired from Konyang University hospital, which will be available at this site with restricted access. This repository includes 10-fold cross-validation, data preprocessing, and evaluation process. This study was supported by grants from the National Information Society Agency (NIA) of Korea.
 
 ## Table of Contents
 1. Installation and Requirements
