@@ -252,6 +252,7 @@ if __name__ == "__main__":
                         help='Index of 10 fold cross-validation to train model')
     parser.add_argument('--trained_model', type=str, default=None,
                         help='Load a trained model in the path and perform only evaluation, without training process')
+    parser.add_argument('--data_dir', type=str, default=None)
     args = parser.parse_args()
 
     disease = ['Sinusitis','Oral_cancer'][0]
