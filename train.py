@@ -94,9 +94,19 @@ def run_epoch(model, dataloader, criterion, optimizer=None, epoch=0, scheduler=N
     metrics.add('sensitivity', sen)
     metrics.add('specificity', spe)
     metrics.add('precision', prec)
-
-    auc = roc_auc_score(labels_epoch, preds_epoch)
-    aupr = average_precision_score(labels_epoch, preds_epoch)
+    
+    try:
+        auc = roc_auc_score(labels_epoch, preds_epoch)
+    except ValueError:
+      auc = 0.
+      print('ValueError. set auc = 0')
+      pass
+    try:
+        aupr = average_precision_score(labels_epoch, preds_epoch)
+    except ValueError:
+      aupr = 0.
+      print('ValueError. set aupr = 0')
+      pass
     metrics.add('auroc', auc)
     metrics.add('aupr', aupr)
 
