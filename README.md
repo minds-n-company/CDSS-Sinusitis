@@ -34,6 +34,8 @@ efficientnet-pytorch==0.7.0
 opencv-python-headless==4.4.0.46
 
 matplotlib==3.3.1
+
+torchmetric==0.6.0
 ```
 ### 1.2. Installation
 Install the library by yourself or build docker image using Dockerfile.
@@ -50,12 +52,12 @@ docker build -t sinusitis .
 ## 3. Run
 ### 3.1. Training
 ```
-python train.py 
+python train.py --data_dir='data'
 ```
 ### 3.2. Testing
 For example,
 ```
-python train.py --fold 0 --trained_model='model/trained-model-fold0.pth' 
+python train.py --fold 0 --trained_model='model/model_weights_b3_fold0.pth' 
 ```
 ## 4. Licenses
 Copyright (c) MINDs n company. All rights reserved.
