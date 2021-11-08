@@ -12,3 +12,5 @@ RUN pip install jupyterlab
 RUN pip install opencv-python-headless
 
 RUN pip install pytorch-lightning
+
+RUN pip install torchmetrics
