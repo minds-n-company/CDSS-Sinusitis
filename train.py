@@ -23,7 +23,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 def run_epoch(model, dataloader, criterion, optimizer=None, epoch=0, scheduler=None, device='cpu'):
-    import torchmetrics as clmetrics
+    import torchmetrics.functional as clmetrics
     from torchmetrics import Precision, Accuracy, Recall
     #import pytorch_lightning.metrics.functional.classification as clmetrics
     #from pytorch_lightning.metrics import Precision, Accuracy, Recall
