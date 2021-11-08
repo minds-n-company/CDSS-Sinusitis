@@ -87,11 +87,12 @@ def prepare_metatable(filenames):
     cvdf = cvdf[['index']+oldcolumns]
     return cvdf
 
-def save_validationlist(root='.'):
+def save_validationlist(root='.', data_dir=None):
     # list up filenames of valid data
     # totalfiles = glob.glob(os.path.join(root,"test_20??_withUPID","*.dcm"))
-    # filenames = glob.glob(os.path.join(root,"test_20??_withUPID","*_[0-3]_[0-3].dcm")) 
-    data_dir = ["final_dcm","final_crop"][0]
+    # filenames = glob.glob(os.path.join(root,"test_20??_withUPID","*_[0-3]_[0-3].dcm"))
+    if data_dir is None:
+        data_dir = ["final_dcm","final_crop"][0]
     logger.info('['*10+' '*20 +'START ANALYSIS'+' '*20+ ']'*10)
     filenames = glob.glob(os.path.join(root,data_dir,"*" + (".dcm" if data_dir=='final_dcm' else '.jpg')))
     logger.info(f'No. of total datasets : {len(filenames)} patients') # 6516
