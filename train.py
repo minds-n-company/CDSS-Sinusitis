@@ -61,7 +61,7 @@ def run_epoch(model, dataloader, criterion, optimizer=None, epoch=0, scheduler=N
         threshold = 0.5
         prob = (torch.sigmoid(outputs)>threshold).long()
         
-        conf = torch.flatten(clmetrics.confusion_matrix(prob, labels, num_classes=2))
+        conf = torch.flatten(clmetrics.confusion_matrix(prob, labels.to(prob.device, dtype=torch.int), num_classes=2))
         tn, fp, fn, tp = conf
 
         metrics.add_dict({
