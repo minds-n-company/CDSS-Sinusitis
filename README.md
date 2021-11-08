@@ -57,7 +57,7 @@ python train.py --data_dir='data'
 ### 3.2. Testing
 For example,
 ```
-python train.py --fold 0 --trained_model='model/model_weights_b3_fold0.pth' 
+python train.py --fold 0 --trained_model='model/model_weights_b3_fold0.pth' --data_dir='data'
 ```
 ## 4. Licenses
 Copyright (c) MINDs n company. All rights reserved.
