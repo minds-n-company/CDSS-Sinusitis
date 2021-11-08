@@ -1,5 +1,5 @@
 # Author : skjang@mnc.ai
-# Date : 2020-12-03
+# Date : 2021-11-08
 
 from data import *
 from utils import *
@@ -23,8 +23,10 @@ import warnings
 warnings.filterwarnings("ignore")
 
 def run_epoch(model, dataloader, criterion, optimizer=None, epoch=0, scheduler=None, device='cpu'):
-    import pytorch_lightning.metrics.functional.classification as clmetrics
-    from pytorch_lightning.metrics import Precision, Accuracy, Recall
+    import torchmetrics as clmetrics
+    from torchmetrics import Precision, Accuracy, Recall
+    #import pytorch_lightning.metrics.functional.classification as clmetrics
+    #from pytorch_lightning.metrics import Precision, Accuracy, Recall
     from sklearn.metrics import roc_auc_score, average_precision_score
 
     metrics = Accumulator()
