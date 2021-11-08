@@ -263,6 +263,7 @@ if __name__ == "__main__":
     parser.add_argument('--trained_model', type=str, default=None,
                         help='Load a trained model in the path and perform only evaluation, without training process')
     parser.add_argument('--data_dir', type=str, default=None)
+    parser.add_argument('--data_extension', type=str, default='dicom', help='read .dcm files in data_dir if set dicom, or read .jpg files')
     args = parser.parse_args()
 
     disease = ['Sinusitis','Oral_cancer'][0]
@@ -287,7 +288,7 @@ if __name__ == "__main__":
 
     since = time.time()
 
-    save_validationlist(args.data_dir)
+    save_validationlist(args.data_dir, args.data_extension)
     
     for ii in cv_fold:
         _ = train_and_eval(args, fold_num=ii, eff_net='b3', max_epoch=20, batch_size=128, multigpu=True, save_path=f'./log/{today_datever}')
