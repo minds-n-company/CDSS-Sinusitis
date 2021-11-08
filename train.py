@@ -288,7 +288,7 @@ if __name__ == "__main__":
 
     since = time.time()
 
-    save_validationlist(args.data_dir, args.data_extension)
+    save_validationlist(data_dir=args.data_dir, data_extension=args.data_extension)
     
     for ii in cv_fold:
         _ = train_and_eval(args, fold_num=ii, eff_net='b3', max_epoch=20, batch_size=128, multigpu=True, save_path=f'./log/{today_datever}')
