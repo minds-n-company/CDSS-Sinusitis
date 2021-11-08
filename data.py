@@ -397,14 +397,14 @@ def get_dataloaders(args, dataset_class, batch, root, fold_num=0, multinode=Fals
     if args.trained_model is not None:
         train_dataset = None
     else:    
-        train_dataset = dataset_class(data_type='train', fold_num=fold_num, transform=transform_train, annotation_path='selected_list(6516).json')
+        train_dataset = dataset_class(data_type='train', fold_num=fold_num, transform=transform_train)#, annotation_path='selected_list(6516).json')
 
     # prepare validation(for hyperparam. tuning), test sets using transform_test
     if args.trained_model is not None:
         train_dataset = None
     else:    
-        val_dataset = dataset_class(data_type='val', fold_num=fold_num, transform=transform_test, annotation_path='selected_list(6516).json')
-    test_dataset = dataset_class(data_type='test', fold_num=fold_num, transform=transform_test, annotation_path='selected_list(6516).json')
+        val_dataset = dataset_class(data_type='val', fold_num=fold_num, transform=transform_test)#, annotation_path='selected_list(6516).json')
+    test_dataset = dataset_class(data_type='test', fold_num=fold_num, transform=transform_test)#, annotation_path='selected_list(6516).json')
 
     train_sampler, valid_sampler, test_sampler = None, None, None 
     trainloader, validloader, testloader = None, None, None 
